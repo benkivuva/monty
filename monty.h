@@ -63,3 +63,46 @@ typedef struct info_s
     unsigned int size;
     unsigned int ln;
 } info_t;
+
+/* Stack Operations */
+void push(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
+void rotl(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
+
+/* Arithmetic Operations */
+void _add(stack_t **stack, unsigned int line_number);
+void _sub(stack_t **stack, unsigned int line_number);
+void _mul(stack_t **stack, unsigned int line_number);
+void _div(stack_t **stack, unsigned int line_number);
+void _mod(stack_t **stack, unsigned int line_number);
+
+/* Doubly Linked List Operations */
+size_t print_dlistint(const stack_t *h);
+stack_t *add_dnodeint(stack_t **head, const int n);
+stack_t *add_dnodeint_end(stack_t **head, const int n);
+void free_dlistint(stack_t *head);
+stack_t *get_dnodeint_at_index(stack_t *head, unsigned int index);
+int delete_dnodeint_at_index(stack_t **head, unsigned int index);
+
+/* Program Logic and Execution */
+void state_init(void);
+void state_clear(void);
+void process_line(char *line);
+void (*get_func(char *op))(stack_t **stack, unsigned int line_number);
+void runner(void);
+
+/* Stack and Queue Switching */
+void stack(stack_t **stack, unsigned int line_number);
+void queue(stack_t **stack, unsigned int line_number);
+
+/* Extern variable */
+extern info_t *state;
+
+#endif
