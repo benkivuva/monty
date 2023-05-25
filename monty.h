@@ -8,6 +8,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#define BUF_SIZE 4096
+#define MOD_STK 0
+#define MOD_QUE 1
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -104,5 +110,8 @@ void queue(stack_t **stack, unsigned int line_number);
 
 /* Extern variable */
 extern info_t *state;
+
+/* string operation */
+int _strcmp(char *s1, char *s2);
 
 #endif
